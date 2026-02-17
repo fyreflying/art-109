@@ -1,0 +1,39 @@
+/* CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* respects user font preferences */
+html {
+    font-size: 100%;
+}
+
+
+/* CSS general */
+header {
+    padding: 4rem;
+    margin-bottom: 3rem;
+    /* background-color: #050a1a; */
+    background: #0f1b3d;
+    /* background-image: url(../images/fish.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background: linear-gradient(180deg, rgba(15, 27, 61, 1) 0%, rgba(9, 18, 42, 1) 50%, rgba(5, 10, 26, 1) 100%);
+    text-align: center;
+    font-family: monospace, sans-serif;
+    border-bottom: #050a1a 32px solid;
+}
+
+/* Styles h1 elements only */
+header h1 {
+    font-size: 4rem;
+}
+
+body {
+    background-color: #09122a;
+    color: #dce7ff;
+    font-family: monospace, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
