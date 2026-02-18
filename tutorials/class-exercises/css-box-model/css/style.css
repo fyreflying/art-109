@@ -1,0 +1,110 @@
+/*
+CSS RESETS
+*/
+
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Remove default spacing */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Respect user font settings */
+html {
+  font-size: 100%;
+}
+
+
+
+
+/* ~~~~~~~~~~~ main css ~~~~~~~~~~
+~~~~~~~~~~(add yours below) ~~~~~~~~~~~ */
+
+body {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: azure;
+    font-family: sans-serif
+}
+
+header {
+  color: black;
+  background-color: gainsboro;
+}
+/* style the header 
+- give it some padding, maybe a background + text color */
+
+
+/* style the div classes  
+- change the background and the font color 
+- can you give them a max-width and center them? 
+- how about some margin and padding?  */
+
+
+
+/* Make images responsive 
+- do a google search if you don't remember how =) */
+
+main {
+  background-image: url("../images/background.jpg");
+}
+
+
+
+.introduction-section {
+  padding: 4rem 0rem;
+}
+
+.introduction-content {
+  padding: 0rem 0rem;
+  line-height: 4rem;
+  text-align: justify;
+  font-size: 2rem;
+  color: #ffffff;
+  mix-blend-mode:  color-dodge;
+  
+}
+
+.showcase-content img {
+  max-width: 30%;
+  margin: 0rem 1rem;
+  border-radius: 0rem;
+}
+
+.showcase-content-larger img {
+  max-width: 50%;
+  margin: 0rem 1rem;
+  border-radius: 0rem;
+}
+
+
+footer {
+  color: black;
+  background-color: gainsboro;
+}
+
+.introduction-header {
+  text-align: right;
+}
+
+@keyframes moving-image {
+  from {rotate: (0);}
+  to {rotate: (180);}
+}
+
+.moving-content img {
+  position: relative;
+  animation-name: moving-image;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
