@@ -25,6 +25,20 @@ header {
     border-bottom: #050a1a 32px solid;
 }
 
+nav {
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    background-color: #080d1c;
+}
+
+nav a {
+    text-decoration: none;
+    color:#dce7ff;
+    display: inline-block;
+    margin: 0 1rem;
+}
+
 /* Styles h1 elements only */
 header h1 {
     font-size: 4rem;
@@ -67,7 +81,7 @@ main {
     margin-bottom: 4rem;
     background-color: #050a1a;
     border-width: 0.2rem;
-    border-color: #19228cad #060b21;
+    border-color: #11235fad #060b21;
     border-style: solid;
     padding: 2rem;
     text-align: justify;
