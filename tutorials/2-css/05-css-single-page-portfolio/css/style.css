@@ -70,7 +70,7 @@ main {
 .about-content, .portfolio-content, .contact-content {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 2rem;
 }
 
 .about-content h2, .portfolio-content h2, .contact-content h2 {
