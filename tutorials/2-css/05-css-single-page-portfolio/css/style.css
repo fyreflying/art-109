@@ -1,16 +1,31 @@
-/* CSS resets */
+/* --------------------------- color palette */
+
+:root {
+--bg-color-1: #0d1326;
+--bg-color-2: #050a1a;
+--font-color-1: #dce7ff;
+--accent-color-1: #11235fad;
+--accent-color-2: #11172e;
+--dark: #050a1a;
+}
+
+/* --------------------------- CSS resets */
 * {
     margin: 0;
     padding: 0;
 }
 
-/* respects user font preferences */
+/* --------------------------- respects user font preferences */
 html {
     font-size: 100%;
 }
 
 
-/* CSS general */
+/* --------------------------- CSS general */
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     padding: 4rem;
     margin-bottom: 3rem;
@@ -19,17 +34,31 @@ header {
     /* background-image: url(../images/fish.jpg);
     background-repeat: no-repeat;
     background-size: cover; */
-    background: linear-gradient(180deg, rgba(15, 27, 61, 1) 0%, rgba(9, 18, 42, 1) 50%, rgba(5, 10, 26, 1) 100%);
+    background: linear-gradient(180deg, var(--accent-color-1) 0%, var(--accent-color-1) 50%, var(--bg-color-2) 100%);
     text-align: center;
     font-family: monospace, sans-serif;
-    border-bottom: #050a1a 32px solid;
+    border-bottom: var(--bg-color-1) 32px solid;
+    
+}
+
+@media (max-width: 840px) {
+    .header {
+        padding-left: 2rem;
+    }
+}
+
+header h1 {
+    font-size: 3rem;
+    /* text-decoration: underline; */
+    /* text-decoration-style: wavy; */
+    /* text-decoration-color: var(--accent-color-1); */
 }
 
 nav {
     position: fixed;
     right: 2rem;
     top: 2rem;
-    background-color: #080d1c;
+    background-color: var(--bg-color-2);
 }
 
 nav a {
@@ -37,19 +66,48 @@ nav a {
     color:#dce7ff;
     display: inline-block;
     margin: 0 1rem;
+    transition: all 0.25s ease-in-out;
 }
 
-/* Styles h1 elements only */
+@media (max-width: 840px) {
+    nav a {
+        margin: 1.5rem;
+    }
+}
+
+nav a:hover {
+    /* background-color: #121314; */
+    color: #90b3ff;
+}
+
+/* --------------------------- Styles h1 elements only */
 header h1 {
     font-size: 4rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
 }
 
 body {
-    background-color: #09122a;
-    color: #dce7ff;
-    font-family: monospace, sans-serif;
+    background-color: var(--bg-color-1);
+    color: var(--font-color-1);
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1.4rem;
     line-height: 1.5;
+}
+
+@media (max-width: 840px) {
+    body {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 1rem;
+    }
 }
 
 main {
@@ -57,8 +115,28 @@ main {
     margin: 1rem auto;
 }
 
+/* smallest to largest based on media query */
+
+@media (max-width: 1080px) {
+    main {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 840px) {
+    main {
+        margin: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        margin: 1rem;
+    }
+}
+
 .about-section {
-    background: linear-gradient(0deg, rgba(15, 27, 61, 1) 0%, rgba(9, 18, 42, 1) 50%, rgba(5, 10, 26, 1) 100%);
+    background: linear-gradient(0deg, var(--bg-color-1) 0%, var(--bg-color-2) 50%, var(--bg-color-2) 100%);
 
 }
 
@@ -73,13 +151,29 @@ main {
     padding: 2rem 2rem;
 }
 
+@media (max-width: 840px) {
+    .about-content {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .about-content {
+        padding: 1rem;
+    }
+}
+
 .about-content h2, .portfolio-content h2, .contact-content h2 {
-    padding: 2rem;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
+    display: inline-block;
+    border-radius: 0.25rem;
+    background-color: var(--accent-color-2);
 }
 
 .portfolio-item {
     margin-bottom: 4rem;
-    background-color: #050a1a;
+    background-color: var(--bg-color-2);
     border-width: 0.2rem;
     border-color: #11235fad #060b21;
     border-style: solid;
@@ -96,15 +190,37 @@ main {
     font-size: 1.2rem;
 }
 
+@media (max-width: 840px) {
+    .portfolio-item {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .portfolio-item {
+        padding: 1rem;
+    }
+}
+
 .portfolio-item img {
     max-width: 100%;
     margin: 0 auto;
     display: block;
     border-radius: 0.25rem;
-    box-shadow: 0 0 1rem rgba(49, 45, 113, 0.5);
+    box-shadow: 0 0 1rem rgba(var(--bg-color-2), 0.5);
 }
 
 footer {
-    background-color: #030a24;
+    background-color: var(--bg-color-2);
     padding: 1.5rem;
+}
+
+/* --------------------------- style classes */
+
+.accent-1 {
+    color:var(--accent-color-1)
+}
+
+.accent-2 {
+    color:var(--accent-color-2)
 }
