@@ -1,0 +1,73 @@
+/* --------------------------- CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------- respects user font preferences */
+html {
+    font-size: 100%;
+}
+
+/* --------------------------- var */
+
+:root {
+    --bg: #eee;
+    --font: #26262d;
+}
+
+body.dark {
+    --bg: #222;
+    --font: #e9e8ff;
+}
+
+/* --------------------------- general css */
+
+body {
+    color: var(--font);
+    background-color: var(--bg);
+}
+
+header {
+    padding: 5rem;
+}
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+img {
+    width: 30rem;
+}
+
+/* --------------------------- classes */
+
+.hidden {
+    display: none;
+}
+
+#img1 {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+}
+
+#img2 {
+    position: absolute;
+    bottom: 8rem;
+    right: 2rem;
+}
+
+#img3 {
+    position: absolute;
+    top: 12rem;
+    left: 7rem;
+}
