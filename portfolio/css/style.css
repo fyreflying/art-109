@@ -1,0 +1,296 @@
+/* --------------------------- color palette */
+
+:root {
+--font-color-1: #d1dbff;
+--bg-color-2: #18223fad;
+--bg-color-1: #01040c;
+--accent-color-1: #fc6639;
+--accent-color-2: #bb8aff;
+--dark: #050a1a;
+}
+
+/* --------------------------- CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------- respects user font preferences */
+html {
+    font-size: 100%;
+}
+
+/* --------------------------- responsive images */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* --------------------------- CSS general */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color-1);
+    color: var(--font-color-1);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: "IBM Plex Mono";
+    text-align: left;
+}
+
+
+header {
+    padding: 0rem 0rem;
+    margin-bottom: 7rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--font-color-1);
+    /* margin: 0 0.5rem; */
+    transition: all 0.1s linear;
+}
+
+nav a:hover{
+    color: var(--accent-color-1);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--font-color-1);
+    font-size: 2.5rem;
+}
+
+@media (max-width: 840px) {
+    .nav-bar {
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: block;
+        align-self: flex-end
+    } ;
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--font-color-1);
+        padding: 1rem 0.5rem;
+    }
+
+    .nav.active {
+    display: flex;
+    }
+
+    .nav-menu a {
+    color: var(--bg-color-1);
+    }
+
+    header {
+        padding: 1.5rem 2rem;
+    }
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.home-graphic {
+    padding: 0rem 0rem;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.home-graphic img {
+    width: 100%;
+    height: auto;
+}
+
+.home-graphic h1 {
+
+    z-index: 10;
+    /* loads after ^^^*/
+        padding: 0rem 0rem;
+        margin: 0;
+        line-height: 15.4rem;
+        text-align: center;
+        font-size: 22rem;
+        color: #fc6639;
+        mix-blend-mode:  difference;
+
+    position: absolute;
+    top: 22rem;
+    left: 0rem;
+
+}
+
+main {
+    margin: 0;
+}
+
+@media (max-width: 1180px) {
+    main {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        margin: 1rem;
+    }
+}
+
+.about-content, .portfolio-content, .contact-content, .project-content {
+    max-width: 120rem;
+    margin: 0 auto 7rem;
+    line-height: 2rem;
+}
+
+.about-content h2, .portfolio-content h2, .contact-content, .project-content h2 {
+    margin: 3rem 0;
+}
+
+.about-content {
+    max-width: 70rem;
+    padding: 2rem;
+    background-color: var(--bg-color-2);
+}
+
+.portfolio-section {
+    padding: 2rem;
+    background-color: var(--font-color-1);
+}
+
+/*project content for individual project pages*/
+.project-content {
+    text-align: justify;
+}
+
+.portfolio-header {
+    color: var(--bg-color-1);
+}
+
+.project-content img {
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.project-content p {
+    padding: 1rem;
+}
+
+.portfolio-item {
+    padding: 1rem;
+    background-color: var(--bg-color-1);
+    color: var(--font-color-1);
+}
+
+.portfolio-item h3 {
+    padding: 0.25rem 0;
+    font-size: 1.25rem;
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+}
+
+.portfolio-item img {
+    border-radius: 0rem;
+    border-style: dashed;
+    border-width: 36px 18px;
+    border-color: var(--bg-color-2);
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: var(--bg-color-2);
+}
+
+footer {
+    padding: 2rem 1rem;
+}
+
+footer img {
+    display: inline;
+    max-width: 2.5rem;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 640px) {
+    footer p {
+        font-size: 1.25rem;
+    }
+
+    footer img {
+        max-width: 2rem;
+        margin: 0 0.3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer img {
+        max-width: 1.75rem;
+        margin: 0 0.1rem;
+    }
+}
+
+/* --------------------------- styles */
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flex-item-grid {
+    flex: 1 0 48rem;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
