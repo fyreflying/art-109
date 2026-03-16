@@ -51,7 +51,8 @@ body {
 
 header {
     padding: 0rem 0rem;
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
+    background-color: var(--dark);
 }
 
 nav a {
@@ -171,6 +172,50 @@ main {
     }
 }
 
+.preview-item h1 {
+    padding: 5rem;
+    text-align: center;
+    font-size: 7rem;
+    display: relative;
+
+    border-radius: 0rem;
+    border-style: dashed;
+    border-width: 36px 36px;
+    border-bottom-width: 0rem;
+    border-top-width: 0rem;
+    border-color: var(--bg-color-2);
+}
+
+.preview-content p {
+    padding: 1rem;
+}
+
+.preview-section {
+    padding: 2rem;
+    background-color: var(--bg-color-1);
+}
+
+.preview-content img {
+    margin: 0 auto;
+    padding: 3rem;
+
+    display: relative;
+    width: 85%;
+    height: auto;
+
+    outline-style: dashed;
+    outline-width: 48px;
+    outline-color: var(--bg-color-2);
+    outline-offset: -96px;
+
+
+}
+
+.preview-item a {
+    text-decoration: none;
+    color: var(--font-color-1);
+}
+
 .about-content, .portfolio-content, .contact-content, .project-content {
     max-width: 120rem;
     margin: 0 auto 7rem;
@@ -192,22 +237,39 @@ main {
     background-color: var(--font-color-1);
 }
 
-/*project content for individual project pages*/
-.project-content {
-    text-align: justify;
-}
+
 
 .portfolio-header {
     color: var(--bg-color-1);
 }
+
+.project-content {
+    text-align: justify;
+}
+/*project content for individual project pages*/
 
 .project-content img {
     margin: 0 auto;
     padding: 3rem;
 }
 
+.project-content h2 {
+    padding: 1rem 4rem;
+    font-size: 4rem;
+}
+
 .project-content p {
-    padding: 1rem;
+    padding: 1rem 4rem;
+    text-align: center;
+}
+
+.project-content a {
+    text-decoration: none;
+    color: var(--accent-color-2);
+}
+
+.project-content a:hover {
+    color: var(--accent-color-1);
 }
 
 .portfolio-item {
