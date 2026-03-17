@@ -64,6 +64,7 @@ nav a {
 
 nav a:hover{
     color: var(--accent-color-1);
+    transition: all 0.1s linear;
 }
 
 .nav-bar {
@@ -112,11 +113,15 @@ nav a:hover{
     }
 
     .nav-menu a {
-    color: var(--bg-color-1);
+    color: var(--dark);
     }
 
     header {
         padding: 1.5rem 2rem;
+    }
+
+    .nav-brand {
+        line-height: 3rem;
     }
 }
 
@@ -155,6 +160,47 @@ nav a:hover{
     left: 0rem;
 
 }
+
+@media (max-width: 1760px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 12rem;
+        line-height: 8rem;
+        font-family: serif;
+
+    }
+}
+
+@media (max-width: 1340px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 8rem;
+        line-height: 6rem;
+        font-family: serif;
+    }
+}
+
+@media (max-width: 1180px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 6rem;
+        line-height: 4rem;
+        font-family: serif;
+    }
+}
+
+@media (max-width: 780px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 3rem;
+        line-height: 4rem;
+        font-family: serif;
+    }
+}
+
+
+
+
 
 main {
     margin: 0;
@@ -216,6 +262,35 @@ main {
     color: var(--font-color-1);
 }
 
+.preview-item a:hover {
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 1760px) {
+    .preview-item h1 {
+        font-size: 5rem;
+
+    }
+}
+
+@media (max-width: 1340px) {
+    .preview-item h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .preview-item h1 {
+        font-size: 2rem;
+        line-height: 4rem;
+        text-align: left;
+    }
+}
+
+
+
 .about-content, .portfolio-content, .contact-content, .project-content {
     max-width: 120rem;
     margin: 0 auto 7rem;
@@ -243,6 +318,7 @@ main {
     color: var(--bg-color-1);
 }
 
+
 .project-content {
     text-align: justify;
 }
@@ -252,6 +328,14 @@ main {
     margin: 0 auto;
     padding: 3rem;
 }
+
+@media (max-width: 1012px) {
+    .project-content img {
+        margin: 2rem;
+        padding: 0rem 1rem;
+    }
+}
+
 
 .project-content h2 {
     padding: 1rem 4rem;
@@ -270,6 +354,34 @@ main {
 
 .project-content a:hover {
     color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+.project-end h2 {
+    padding: 4rem 2rem;
+    display: inline-block;
+}
+
+.project-end a {
+    color: var(--font-color-1);
+    text-decoration: none;
+}
+
+.project-end a:hover {
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 640px) {
+    .project-end {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .project-end {
+        font-size: 0.8rem;
+    }
 }
 
 .portfolio-item {
@@ -299,8 +411,29 @@ main {
     color: var(--bg-color-2);
 }
 
+.portfolio-item img:hover {
+    border-color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 1180px) {
+    .project-header {
+        margin: 1rem;
+        text-align: left;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1012px) {
+    .project-header {
+        margin: 1rem;
+        line-height: 4rem;
+    }
+}
+
 footer {
     padding: 2rem 1rem;
+    background-color: var(--dark);
 }
 
 footer img {
@@ -309,26 +442,45 @@ footer img {
     margin: 0 0.5rem;
 }
 
-@media (max-width: 640px) {
-    footer p {
-        font-size: 1.25rem;
-    }
-
-    footer img {
-        max-width: 2rem;
-        margin: 0 0.3rem;
-    }
+footer p {
+    color: var(--font-color-1);
 }
 
-@media (max-width: 450px) {
+footer a {
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
     footer p {
         font-size: 1rem;
     }
 
     footer img {
-        max-width: 1.75rem;
-        margin: 0 0.1rem;
+        max-width: 2rem;
+        margin: 0 0.15rem;
     }
+}
+
+@media (max-width: 450px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    footer img {
+        max-width: 1rem;
+        margin: 0 0.05rem;
+    }
+}
+
+.contact-section h1 {
+    text-align: center;
+    padding: 4rem 0rem 0rem 0rem;
+}
+
+.contact-section hr {
+    border-color: var(--bg-color-2);
+    border-width: 1rem;
+    border-style: solid;
 }
 
 /* --------------------------- styles */
@@ -350,6 +502,21 @@ footer img {
 .flex-item-grid {
     flex: 1 0 48rem;
 }
+
+@media (max-width: 760px) {
+    .flex-item-grid {
+        flex: 0 1 48rem;
+        float: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .flex-container {
+        flex: 0 1 48rem;
+        float: none;
+    }
+}
+
 
 .ibm-plex-mono-regular {
   font-family: "IBM Plex Mono", monospace;
