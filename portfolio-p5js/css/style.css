@@ -1,0 +1,525 @@
+/* --------------------------- color palette */
+
+:root {
+--font-color-1: #d1dbff;
+--bg-color-2: #18223fad;
+--bg-color-1: #01040c;
+--accent-color-1: #fc6639;
+--accent-color-2: #bb8aff;
+--dark: #050a1a;
+}
+
+/* --------------------------- CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------- respects user font preferences */
+html {
+    font-size: 100%;
+}
+
+/* --------------------------- responsive images */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* --------------------------- CSS general */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color-1);
+    color: var(--font-color-1);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: "IBM Plex Mono";
+    text-align: left;
+}
+
+
+header {
+    padding: 0rem 0rem;
+    margin-bottom: 4rem;
+    background-color: var(--dark);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--font-color-1);
+    /* margin: 0 0.5rem; */
+    transition: all 0.1s linear;
+}
+
+nav a:hover{
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--font-color-1);
+    font-size: 2.5rem;
+}
+
+@media (max-width: 840px) {
+    .nav-bar {
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: block;
+        align-self: flex-end
+    } ;
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--font-color-1);
+        padding: 1rem 0.5rem;
+    }
+
+    .nav.active {
+    display: flex;
+    }
+
+    .nav-menu a {
+    color: var(--dark);
+    }
+
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    .nav-brand {
+        line-height: 3rem;
+    }
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.home-graphic {
+    padding: 0rem 0rem;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.home-graphic img {
+    width: 100%;
+    height: auto;
+}
+
+.home-graphic h1 {
+
+    z-index: 10;
+    /* loads after ^^^*/
+        padding: 0rem 0rem;
+        margin: 0;
+        line-height: 15.4rem;
+        text-align: center;
+        font-size: 22rem;
+        color: #fc6639;
+        mix-blend-mode:  difference;
+
+    position: absolute;
+    top: 22rem;
+    left: 0rem;
+
+}
+
+@media (max-width: 1760px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 12rem;
+        line-height: 8rem;
+        font-family: serif;
+
+    }
+}
+
+@media (max-width: 1340px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 8rem;
+        line-height: 6rem;
+        font-family: serif;
+    }
+}
+
+@media (max-width: 1180px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 6rem;
+        line-height: 4rem;
+        font-family: serif;
+    }
+}
+
+@media (max-width: 780px) {
+    .home-graphic h1 {
+        position: absolute;
+        font-size: 3rem;
+        line-height: 4rem;
+        font-family: serif;
+    }
+}
+
+
+
+
+
+main {
+    margin: 0;
+}
+
+@media (max-width: 1180px) {
+    main {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        margin: 1rem;
+    }
+}
+
+.preview-item h1 {
+    padding: 5rem;
+    text-align: center;
+    font-size: 7rem;
+    display: relative;
+
+    border-radius: 0rem;
+    border-style: dashed;
+    border-width: 36px 36px;
+    border-bottom-width: 0rem;
+    border-top-width: 0rem;
+    border-color: var(--bg-color-2);
+}
+
+.preview-content p {
+    padding: 1rem;
+}
+
+.preview-section {
+    padding: 2rem;
+    background-color: var(--bg-color-1);
+}
+
+.preview-content img {
+    margin: 0 auto;
+    padding: 3rem;
+
+    display: relative;
+    width: 85%;
+    height: auto;
+
+    outline-style: dashed;
+    outline-width: 48px;
+    outline-color: var(--bg-color-2);
+    outline-offset: -96px;
+
+
+}
+
+.preview-item a {
+    text-decoration: none;
+    color: var(--font-color-1);
+}
+
+.preview-item a:hover {
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 1760px) {
+    .preview-item h1 {
+        font-size: 5rem;
+
+    }
+}
+
+@media (max-width: 1340px) {
+    .preview-item h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+}
+
+@media (max-width: 780px) {
+    .preview-item h1 {
+        font-size: 2rem;
+        line-height: 4rem;
+        text-align: left;
+    }
+}
+
+
+
+.about-content, .portfolio-content, .contact-content, .project-content {
+    max-width: 120rem;
+    margin: 0 auto 7rem;
+    line-height: 2rem;
+}
+
+.about-content h2, .portfolio-content h2, .contact-content, .project-content h2 {
+    margin: 3rem 0;
+}
+
+.about-content {
+    max-width: 70rem;
+    padding: 2rem;
+    background-color: var(--bg-color-2);
+}
+
+.portfolio-section {
+    padding: 2rem;
+    background-color: var(--font-color-1);
+}
+
+
+
+.portfolio-header {
+    color: var(--bg-color-1);
+}
+
+
+.project-content {
+    text-align: justify;
+}
+/*project content for individual project pages*/
+
+.project-content img {
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+@media (max-width: 1012px) {
+    .project-content img {
+        margin: 2rem;
+        padding: 0rem 1rem;
+    }
+}
+
+
+.project-content h2 {
+    padding: 1rem 4rem;
+    font-size: 4rem;
+}
+
+.project-content p {
+    padding: 1rem 4rem;
+    text-align: center;
+}
+
+.project-content a {
+    text-decoration: none;
+    color: var(--accent-color-2);
+}
+
+.project-content a:hover {
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+.project-end h2 {
+    padding: 4rem 2rem;
+    display: inline-block;
+}
+
+.project-end a {
+    color: var(--font-color-1);
+    text-decoration: none;
+}
+
+.project-end a:hover {
+    color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 640px) {
+    .project-end {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .project-end {
+        font-size: 0.8rem;
+    }
+}
+
+.portfolio-item {
+    padding: 1rem;
+    background-color: var(--bg-color-1);
+    color: var(--font-color-1);
+}
+
+.portfolio-item h3 {
+    padding: 0.25rem 0;
+    font-size: 1.25rem;
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+}
+
+.portfolio-item img {
+    border-radius: 0rem;
+    border-style: dashed;
+    border-width: 36px 18px;
+    border-color: var(--bg-color-2);
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: var(--bg-color-2);
+}
+
+.portfolio-item img:hover {
+    border-color: var(--accent-color-1);
+    transition: all 0.1s linear;
+}
+
+@media (max-width: 1180px) {
+    .project-header {
+        margin: 1rem;
+        text-align: left;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1012px) {
+    .project-header {
+        margin: 1rem;
+        line-height: 4rem;
+    }
+}
+
+footer {
+    padding: 2rem 1rem;
+    background-color: var(--dark);
+}
+
+footer img {
+    display: inline;
+    max-width: 2.5rem;
+    margin: 0 0.5rem;
+}
+
+footer p {
+    color: var(--font-color-1);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    footer p {
+        font-size: 1rem;
+    }
+
+    footer img {
+        max-width: 2rem;
+        margin: 0 0.15rem;
+    }
+}
+
+@media (max-width: 450px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    footer img {
+        max-width: 1rem;
+        margin: 0 0.05rem;
+    }
+}
+
+.contact-section h1 {
+    text-align: center;
+    padding: 4rem 0rem 0rem 0rem;
+}
+
+.contact-section hr {
+    border-color: var(--bg-color-2);
+    border-width: 1rem;
+    border-style: solid;
+}
+
+/* --------------------------- styles */
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flex-item-grid {
+    flex: 1 0 48rem;
+}
+
+@media (max-width: 760px) {
+    .flex-item-grid {
+        flex: 0 1 48rem;
+        float: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .flex-container {
+        flex: 0 1 48rem;
+        float: none;
+    }
+}
+
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
