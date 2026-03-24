@@ -1,0 +1,24 @@
+/* --------------------------- CSS resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sticky-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
