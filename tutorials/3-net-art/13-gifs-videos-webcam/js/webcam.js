@@ -1,5 +1,5 @@
 
-const webcamVideo = document.querySelectorAll("#webcam")
+const webcamVideo = document.querySelector("#webcam");
 
 async function startWebcam() {
     
