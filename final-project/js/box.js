@@ -9,10 +9,20 @@ const toggle1 = document.querySelector("#toggle1");
 const toggle2 = document.querySelector("#toggle2");
 const toggle3 = document.querySelector("#toggle3");
 
+// const camEl = document.querySelector('data-aframe-default-camera');
+const cam1 = document.querySelector("#cam1");
+
+
+//initial cam stuff
+
+
+
   interactive1.addEventListener('mouseenter', function () {
 
     interactive1.setAttribute('scale', {x: 1.25, y: 1.25, z: 1.25});
     toggle1.setAttribute('visible', true);
+    cam1.setAttribute('fov', 105);
+
     
   })
 
@@ -20,24 +30,41 @@ const toggle3 = document.querySelector("#toggle3");
 
     interactive1.setAttribute('scale', {x: 1, y: 1, z: 1});
     toggle1.setAttribute('visible', false);
+    cam1.setAttribute('fov', 90);
 
   })
 
+  //click to move
+  interactive1.addEventListener('click', function () {
+
+    cam1.setAttribute('position', {x: 0, y: 1.6, z: 0});
+
+  })
 
 
     interactive2.addEventListener('mouseenter', function () {
 
     interactive2.setAttribute('scale', {x: 1.25, y: 1.25, z: 1.25});
     toggle2.setAttribute('visible', true);
-    
+    cam1.setAttribute('fov', 105);
+
   })
 
   interactive2.addEventListener('mouseleave', function () {
 
     interactive2.setAttribute('scale', {x: 1, y: 1, z: 1});
     toggle2.setAttribute('visible', false);
+    cam1.setAttribute('fov', 90);
 
   })
+
+  //click to move
+    interactive2.addEventListener('click', function () {
+
+    cam1.setAttribute('position', {x: 4, y: 1.6, z: 4});
+
+  })
+
 
       interactive3.addEventListener('mouseenter', function () {
 
@@ -52,4 +79,3 @@ const toggle3 = document.querySelector("#toggle3");
     toggle3.setAttribute('visible', false);
 
   })
-
