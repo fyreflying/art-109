@@ -38,6 +38,7 @@ const cam1 = document.querySelector("#cam1");
   interactive1.addEventListener('click', function () {
 
     cam1.setAttribute('position', {x: 0, y: 1.6, z: 0});
+    cam1.setAttribute('wasd-controls-enabled', true);
 
   })
 
@@ -62,6 +63,7 @@ const cam1 = document.querySelector("#cam1");
     interactive2.addEventListener('click', function () {
 
     cam1.setAttribute('position', {x: 4, y: 1.6, z: 4});
+    cam1.setAttribute('wasd-controls-enabled', false);
 
   })
 
