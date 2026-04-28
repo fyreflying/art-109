@@ -13,9 +13,6 @@
 
             <img id="sky" src="images/sky_nightcloak_01c_compressed.png">
 
-            <img id="grass" src="images/tides_grass_a.png">
-            <img id="sidewalk" src="images/tides_floor_stone_1.png">
-
             <img id="tree" src="images/tree.png">
             <img id="picnic" src="images/picnic.png">
 
@@ -30,9 +27,17 @@
 
 
             <img id="windows" src="images/concretewall013b_illum.png">
-            <img id="wall" src="images/black_wall_metal_002b.png">
-            <img id="wallheight" src="images/black_wall_metal_002b_height-ssbump.png">
-            <img id="wallenvmap" src="images/black_wall_envmap_002a_hdr.png">
+
+            <img id="wall" src="images/concrete_modular_wall001a.png">
+            <img id="wallheight" src="images/concrete_modular_wall001a_height-ssbump.png">
+            <img id="wallnormal" src="images/concrete_modular_wall001a_normal.png">
+
+            <img id="wall2" src="images/concrete_bts_floor002a.png">
+            <img id="wallnormal2" src="images/concrete_bts_floor002a_normal.png">
+
+            <img id="floor" src="images/concrete_modular_floor001a.png">
+            <img id="floorheight" src="images/concrete_modular_floor001_height-ssbump.png">
+            <img id="floornormal" src="images/concrete_modular_floor001a_normal.png">
 
         </a-assets>
 
@@ -46,11 +51,68 @@
         <a-sky src="#sky"></a-sky>
 
         <!-- floor -->
-        <a-plane src="#sidewalk" position="0 0 0" rotation="-90 0 0" width="12" height="12" roughness="1.0" ></a-plane>
-        <a-box src="#sidewalk" position="8 -0.25 0" depth="20" height="1" width="4" roughness="0.8" repeat="1 6"></a-box>
+        <a-plane 
+          src="#floor" 
+          normal-map="#floornormal" 
+          displacement-map="#floorheight" 
+          roughness="1.0"
+
+          repeat="8 8" 
+          normal-texture-repeat="8 8"
+          displacement-texture-repeat="8 8"
+
+          position="0 0 0" rotation="-90 0 0" 
+          width="32" height="32"
+        ></a-plane>
+        
+        <!-- wall -->
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 1" 
+          normal-texture-repeat="2 1"
+
+          
+          position="8 3 0" 
+          depth="8" height="4" width="8"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 1" 
+          normal-texture-repeat="2 1"
+
+          
+          position="8 3 8" 
+          depth="8" height="4" width="8"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 1" 
+          normal-texture-repeat="2 1"
+
+          
+          position="0 3 8" 
+          depth="8" height="4" width="8"
+        ></a-box>
+
+        
+        <!-- <a-box src="#sidewalk" position="8 -0.25 0" depth="20" height="1" width="4" roughness="0.8" repeat="1 6"></a-box>
         <a-box src="#sidewalk" position="-8 -0.25 0" depth="20" height="1" width="4" roughness="0.8" repeat="1 6"></a-box>
         <a-box src="#sidewalk" position="0 -0.25 8" depth="4" height="1" width="12" roughness="0.8" repeat="4 1"></a-box>
-        <a-box src="#sidewalk" position="0 -0.25 -8" depth="4" height="1" width="12" roughness="0.8" repeat="4 1"></a-box>
+        <a-box src="#sidewalk" position="0 -0.25 -8" depth="4" height="1" width="12" roughness="0.8" repeat="4 1"></a-box> -->
 
 
         <!-- static elements -->
