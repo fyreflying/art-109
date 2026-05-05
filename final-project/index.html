@@ -24,7 +24,7 @@
 
             <img id="text1" src="images/doorprompt.png">
             <img id="text2" src="images/doorprompt2.png">
-            <img id="text3" src="images/text3.png">
+            <img id="text3" src="images/endprompt.png">
             <img id="text4" src="images/text4.png">
 
 
@@ -580,6 +580,25 @@
         visible="false" 
         
         animation="property: object3D.position.y; to: 2; dir: alternate; dur: 2000; loop: true"
+        ></a-plane>
+
+
+        <a-plane 
+        src="#text3" 
+
+        position="0.25 33.5 -5" 
+        rotation="0 315 0" 
+        width="1" 
+        height="0.75" 
+
+        transparent="true" 
+        shader="flat"
+        material-fog="false"
+        toneMapped="false"
+        
+        visible="true" 
+        
+        animation="property: object3D.position.y; to: 34; dir: alternate; dur: 2000; loop: true"
         ></a-plane>
 
         <!-- key -->
