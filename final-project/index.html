@@ -3,7 +3,7 @@
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene fog="type: linear; color: #030b38; density: 0.3; near: 2; far: 32">
         <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
         <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
         <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
@@ -16,17 +16,23 @@
             <img id="tree" src="images/tree.png">
             <img id="picnic" src="images/picnic.png">
 
-            <img id="bench" src="images/bench.png">
+            <img id="waypoint" src="images/marker1.png">
+            <img id="item" src="images/marker2.png">
+
             <img id="key" src="images/key.png">
             <img id="bush" src="images/bush.png">
 
-            <img id="text" src="images/text.png">
-            <img id="text2" src="images/text2.png">
+            <img id="text1" src="images/doorprompt.png">
+            <img id="text2" src="images/doorprompt2.png">
             <img id="text3" src="images/text3.png">
             <img id="text4" src="images/text4.png">
 
 
-            <img id="windows" src="images/concretewall013b_illum.png">
+            <img id="windows" src="images/gen01.png">
+            <img id="windowsenvmask" src="images/gen01_ref.png">
+
+            <img id="doors" src="images/pk02_door01_C.png">
+            <img id="doorsnormal" src="images/pk02_door01_N.png">
 
             <img id="wall" src="images/concrete_modular_wall001a.png">
             <img id="wallheight" src="images/concrete_modular_wall001a_height-ssbump.png">
@@ -43,12 +49,15 @@
 
         <!-- light -->
         <a-light type="ambient" color="#191b24"></a-light>
-        <a-light intensity="0.3" position="-1.5 1 0"></a-light>
+        <a-light intensity="0.0025" position="-1.5 1 0"></a-light>
 
-        <a-light type="point" intensity="2" color="#dbd69a" penumbra="0.5" position="-3.5 3 3.5"></a-light>
+        <a-light type="point" intensity="0.4" color="#cdd4db" penumbra="0.5" position="-2 3 3" distance="4.0"></a-light>
+        <a-light type="point" intensity="0.4" color="#cdd4db" penumbra="0.5" position="-5.8 3 10" distance="4.0"></a-light>
+        <a-light type="point" intensity="0.4" color="#cdd4db" penumbra="0.5" position="3 3 -2.5" distance="4.0"></a-light>
+
 
         <!-- sky environment -->
-        <a-sky src="#sky"></a-sky>
+        <a-sky src="#sky" material="fog: false"></a-sky>
 
         <!-- floor -->
         <a-plane 
@@ -57,14 +66,44 @@
           displacement-map="#floorheight" 
           roughness="1.0"
 
-          repeat="8 8" 
-          normal-texture-repeat="8 8"
-          displacement-texture-repeat="8 8"
+          repeat="4 4" 
+          normal-texture-repeat="4 4"
+          displacement-texture-repeat="4 4"
 
           position="0 0 0" rotation="-90 0 0" 
-          width="32" height="32"
+          width="16" height="16"
+        ></a-plane>
+
+        <a-plane 
+          src="#floor" 
+          normal-map="#floornormal" 
+          displacement-map="#floorheight" 
+          roughness="1.0"
+
+          repeat="4 4" 
+          normal-texture-repeat="4 4"
+          displacement-texture-repeat="4 4"
+
+          position="-12 0 0" rotation="-90 0 0" 
+          width="8" height="16"
+        ></a-plane>
+
+        <a-plane 
+          src="#floor" 
+          normal-map="#floornormal" 
+          displacement-map="#floorheight" 
+          roughness="1.0"
+
+          repeat="4 4" 
+          normal-texture-repeat="4 4"
+          displacement-texture-repeat="4 4"
+
+          position="-8 0 12" rotation="-90 0 0" 
+          width="8" height="8"
         ></a-plane>
         
+
+
         <!-- wall -->
         <a-box 
           src="#wall" 
@@ -108,7 +147,300 @@
           depth="8" height="4" width="8"
         ></a-box>
 
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="1 1" 
+          normal-texture-repeat="1 1"
+
+          
+          position="0 3 -4" 
+          depth="4" height="4" width="4"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="4 2" 
+          normal-texture-repeat="4 2"
+
+          
+          position="-6 3 -2" 
+          depth="8" height="4" width="8"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 2" 
+          normal-texture-repeat="2 2"
+
+          
+          position="-6 3 5.5" 
+          depth="3" height="4" width="4"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 2" 
+          normal-texture-repeat="2 2"
+
+          
+          position="-6.5 3 7.5" 
+          depth="1" height="4" width="3"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="4 4" 
+          normal-texture-repeat="4 4"
+
+          
+          position="-13 5 -5" 
+          depth="8" height="8" width="8"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="4 4" 
+          normal-texture-repeat="4 4"
+
+          
+          position="-13 5 -5" 
+          depth="8" height="8" width="8"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="4 8" 
+          normal-texture-repeat="4 8"
+
+          
+          position="-9 -9 20" 
+          depth="8" height="32" width="12"
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 2" 
+          normal-texture-repeat="2 2"
+
+          
+          position="-6 3 14" 
+          depth="4" height="4" width="4"
+        ></a-box>
+
+
+        //background elements
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 1" 
+          normal-texture-repeat="2 1"
+
+          
+          position="-11.5 0.2 12" 
+          depth="1" height="2" width="8"
+          rotation="0 90 0" 
+        ></a-box>
+
+        <a-box 
+          src="#windows" 
+          normal-map="#windowsenvmap"
+
+          roughness="1.0"
+
+          repeat="1 2" 
+          normal-texture-repeat="1 2"
+
+          
+          position="-11.5 -8.8 12" 
+          depth="1" height="16" width="8"
+          rotation="0 90 0" 
+        ></a-box>
+
+        <a-box 
+          src="#windows" 
+          transparent="true"
+          shader="flat"
+          material-fog="false"
+          toneMapped="false"
+
+          roughness="1.0"
+
+          repeat="1 2" 
+          normal-texture-repeat="1 2"
+
+          
+          position="-11.5 -8.8 12" 
+          depth="1" height="16" width="8"
+          rotation="0 90 0" 
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="-14 -6.8 7.5" 
+          depth="1" height="16" width="6"
+          rotation="0 0 0" 
+        ></a-box>
+
+        <a-box 
+          src="#wall" 
+          normal-map="#wallnormal" 
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="-16.5 -6.8 2" 
+          depth="1" height="16" width="10"
+          rotation="0 90 0" 
+        ></a-box>
+
+
+
+
+        <a-box 
+          src="#windows" 
+          normal-map="#windowsenvmap" 
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="4 17 -7.5" 
+          depth="8" height="32" width="12"
+        ></a-box>
+
+        <a-box 
+          src="#windows" 
+          transparent="true"
+          shader="flat"
+          material-fog="false"
+          toneMapped="false"
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="4 17 -7.5" 
+          depth="8.1" height="32.1" width="12.1"
+        ></a-box>
         
+
+        <a-box 
+          src="#windows" 
+          normal-map="#windowsenvmap" 
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="16 8 24" 
+          depth="8" height="32" width="12"
+          rotation="0 90 0" 
+        ></a-box>
+
+        <a-box 
+          src="#windows" 
+          transparent="true"
+          shader="flat"
+          material-fog="false"
+          toneMapped="false"
+
+          roughness="1.0"
+
+          repeat="2 4" 
+          normal-texture-repeat="2 4"
+
+          
+          position="16 8 24" 
+          depth="8.1" height="32.1" width="12.1"
+          rotation="0 90 0" 
+        ></a-box>
+
+
+        <a-box 
+          src="#windows" 
+          normal-map="#windowsenvmap" 
+
+          roughness="1.0"
+
+          repeat="1 4" 
+          normal-texture-repeat="1 4"
+
+          
+          position="21 2 12" 
+          depth="8" height="32" width="12"
+          rotation="0 90 0" 
+        ></a-box>
+
+        <a-box 
+          src="#windows" 
+          transparent="true"
+          shader="flat"
+          material-fog="false"
+          toneMapped="false"
+
+          roughness="1.0"
+
+          repeat="1 4s" 
+          normal-texture-repeat="1 4"
+
+          
+          position="21 2 12" 
+          depth="8.1" height="32.1" width="12.1"
+          rotation="0 90 0" 
+        ></a-box>
+
         <!-- <a-box src="#sidewalk" position="8 -0.25 0" depth="20" height="1" width="4" roughness="0.8" repeat="1 6"></a-box>
         <a-box src="#sidewalk" position="-8 -0.25 0" depth="20" height="1" width="4" roughness="0.8" repeat="1 6"></a-box>
         <a-box src="#sidewalk" position="0 -0.25 8" depth="4" height="1" width="12" roughness="0.8" repeat="4 1"></a-box>
@@ -117,6 +449,20 @@
 
         <!-- static elements -->
     
+        <a-box 
+          id="door1" src="#doors" 
+          normal-map="#doorsnormal" 
+
+          roughness="1.0"
+
+          repeat="1 1" 
+          normal-texture-repeat="1 1"
+
+          
+          position="3 2 -3" 
+          depth="0.5" height="2" width="2"
+        ></a-box>
+
 
         <!-- <a-plane src="#picnic" position="-2 0.5 -2" rotation="0 60 0" width="2" height="1" transparent="1"></a-plane> -->
      
@@ -127,26 +473,159 @@
 
 
         <!-- interactive elements -->
-        <!-- currently transforms perspective position -->
-        <a-plane id="interactive1" src="#bench" position="-4 1 4" rotation="0 135 0" width="4" height="2" roughness="0.7" transparent="1"></a-plane>
-        <a-plane id="toggle1" src="#text2" position="-4 3 4" rotation="0 135 0" width="4" height="1.5" transparent="1" visible="false" roughness="1" animation="property: object3D.position.y; to: 3.5; dir: alternate; dur: 2000; loop: true"></a-plane>
 
-        <a-plane id="interactive2" src="#key" position="-2 1.5 -1" rotation="0 60 0" width="1.5" height="1.5" transparent="1"></a-plane>
-        <a-plane id="toggle2" src="#text" position="-2 4.5 -1" rotation="0 60 0" width="2" height="2" transparent="1" visible="false" roughness="1" animation="property: object3D.position.y; to: 1.5; dir: alternate; dur: 2000; loop: true"></a-plane>
+        <a-plane 
+        id="interactive1" src="#waypoint" 
+        position="-2 1 3" 
+        rotation="0 135 0" 
+        width="1" 
+        height="1" 
+        roughness="0.7" 
+        transparent="1"
+        side="double"
+        emissive="#fff"
 
-        <!-- <a-plane id="interactive3" src="#bush" position="3.5 1 -3" rotation="0 290 0" width="6" height="4" transparent="1"></a-plane> -->
-        <!-- <a-plane id="toggle3" src="#text3" position="3.25 3.3 -2.75" rotation="0 290 0" width="5.5" height="2" transparent="1" visible="false" roughness="1" animation="property: object3D.position.y; to: 3.5; dir: alternate; dur: 2000; loop: true"></a-plane> -->
+        visible="true" 
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
+
+        <a-plane 
+        id="interactive2" src="#waypoint" 
+        position="-9 1 3" 
+        rotation="0 135 0" 
+        width="1" 
+        height="1" 
+        roughness="0.7" 
+        transparent="1"
+        side="double"
+        emissive="#fff"
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
+
+        <a-plane 
+        id="interactive3" src="#waypoint" 
+        position="-16.7 1.2 7.7" 
+        rotation="0 135 0" 
+        width="1" 
+        height="1" 
+        roughness="0.7" 
+        transparent="1"
+        side="double"
+        emissive="#fff"
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
+
+        <a-plane 
+        id="interactive4" src="#waypoint" 
+        position="-5.8 1.2 10" 
+        rotation="0 135 0" 
+        width="1" 
+        height="1" 
+        roughness="0.7" 
+        transparent="1"
+        side="double"
+        emissive="#fff"
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
+
+        <a-plane 
+        id="interactive5" src="#waypoint" 
+        position="3 1.2 -1.5" 
+        rotation="0 135 0" 
+        width="1" 
+        height="1" 
+        roughness="0.7" 
+        transparent="1"
+        side="double"
+        emissive="#fff"
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
+    
+        <!-- text -->
+        <a-plane 
+        id="toggle1" src="#text1" 
+
+        position="3 1.9 -2.6" 
+        rotation="0 0 0" 
+        
+        width="1" 
+        height="0.25" 
+
+        transparent="true" 
+        shader="flat"
+        material-fog="false"
+        toneMapped="false"
+        
+        visible="false" 
+        
+        animation="property: object3D.position.y; to: 2; dir: alternate; dur: 2000; loop: true"
+        ></a-plane>
 
 
+        <!-- text -->
+        <a-plane 
+        id="toggle2" src="#text2" 
 
-        <!-- <a-box id="interactive" src="#wall" depth="4" height="4" width="4" position="-8 2 -16" rotation="0 0 0" env-map="#wallenvmap" roughness="0.25" metalness="1" metalness-map="#wallheight" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-box> -->
+        position="3 1.9 -2.6" 
+        rotation="0 0 0" 
+        
+        width="1" 
+        height="0.25" 
+
+        transparent="true" 
+        shader="flat"
+        material-fog="false"
+        toneMapped="false"
+        
+        visible="false" 
+        
+        animation="property: object3D.position.y; to: 2; dir: alternate; dur: 2000; loop: true"
+        ></a-plane>
+
+        <!-- key -->
+        <a-plane 
+        id="key1" src="#key" 
+
+        position="-4.5 1.2 7.5" 
+        rotation="0 0 0" 
+        
+        width="0.5" 
+        height="0.5" 
+
+        transparent="true" 
+        shader="flat"
+        material-fog="false"
+        toneMapped="false"
+        
+        visible="true" 
+        
+        animation="property: object3D.position.y; to: 1.4; dir: alternate; dur: 2000; loop: true"
+        ></a-plane>
+        <a-plane 
+        id="toggle3" src="#item" 
+
+        position="-4.5 2 7.5" 
+        rotation="0 0 0" 
+        
+        width="0.5" 
+        height="0.5" 
+
+        roughness="0.7" 
+        transparent="true"
+        side="double"
+        emissive="#fff"
+
+        visible="false"
+
+        animation="property: object3D.rotation.y; to: 360; loop: true; dur: 8000; easing: linear"
+        ></a-plane>
 
 
         <!-- camera -->
         <a-entity camera="active: false" look-controls position="0 1.6 0" data-aframe-default-camera></a-entity>
 
       <!-- <a-entity id="rig" position="25 10 0"> -->
-        <a-camera id="cam1" active="true" look-controls="true" wasd-controls-enabled="true" position="0 1.6 0" fov="90">
+        <a-camera id="cam1" active="true" look-controls="true" wasd-controls-enabled="false" position="0 1.6 0" fov="90">
           <a-cursor color="#BBBFFA"></a-cursor>
         </a-camera>
       <!-- </a-entity> -->
