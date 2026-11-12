@@ -1,11 +1,12 @@
 /* --------------------------- color palette */
 
 :root {
---font-color-1: #d1dbff;
+--font-color-1: #e8edff;
+--font-color-2: #0d1222ad;
 --bg-color-2: #18223fad;
---bg-color-1: #01040c;
---accent-color-1: #fc6639;
---accent-color-2: #bb8aff;
+--bg-color-1: hsl(224, 85%, 3%);
+--accent-color-1: #ff8f3f;
+--accent-color-2: #3fff69;
 --dark: #050a1a;
 }
 
@@ -309,13 +310,13 @@ main {
 
 .portfolio-section {
     padding: 2rem;
-    background-color: var(--font-color-1);
+    background-color: var(--font-color-2);
 }
 
 
 
 .portfolio-header {
-    color: var(--bg-color-1);
+    color: var(--font-color-1);
 }
 
 
